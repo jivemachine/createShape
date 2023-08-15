@@ -17,3 +17,11 @@
     text-align: center;
     margin: 5rem;
 }
+
+.draw {
+    background-color: blanchedalmond;
+    height: 600px;
+    width: 600px;
+    margin-left: 30%;
+    margin-bottom: 5%;
+}
