@@ -11,6 +11,10 @@
     </head>
 
     <body>
+        <div class="header">
+            <span>Click Into Shape</span>
+        </div>
+
         <div class="RectangleDiv">
             <label for="Rectangle">Rectangle</label>
             <input type="text" name="Rectangle" value="width">
@@ -37,7 +41,14 @@
         <div class="draw"></div>
 
         <!-- shape info -->
-        <div class="shapeInfo"></div>
+        <div class="shapeInfo">
+            <label>Shape Info:</label>
+            <p class="shapeName"></p>
+            <p class="width"></p>
+            <p class="height"></p>
+            <p class="radius"></p>
+            <p class="perimeter"></p>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
         <script src="app.js"></script>
