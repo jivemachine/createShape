@@ -1,3 +1,16 @@
+.header {
+    text-align: center;
+    background-color: aliceblue;
+    height: 10em;
+    width: auto;
+    margin: 1em;
+}
+
+.header span {
+    font-size:xx-large;
+    padding-bottom: 50px;
+}
+
 .RectangleDiv {
     text-align: center;
     margin: 5rem;
