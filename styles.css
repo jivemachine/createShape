@@ -7,7 +7,9 @@
 }
 
 .header span {
-    font-size:xx-large;
+    font-size:50px;
+    position: relative;
+    bottom: -0.5em;
 }
 
 .RectangleDiv {
@@ -30,14 +32,20 @@
     margin: 5rem;
 }
 
+.drawContainer {
+    display: flex;
+}
+
 .draw {
     background-color: blanchedalmond;
     height: 600px;
     width: 600px;
-    margin-left: 30%;
+    margin-left: 10%;
     margin-bottom: 5%;
 }
 
 .shapeInfo {
     margin-left: 3em;
+    background-color: burlywood;
+    margin-bottom: 5%;
 };
