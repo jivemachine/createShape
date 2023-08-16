@@ -39,6 +39,7 @@ class Triangle extends Shape {
 
 class Rectangle extends Shape {
     constructor(width, height) {
+        super();
         this.width = width;
         this.height = height;
     };
