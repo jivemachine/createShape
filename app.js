@@ -51,9 +51,12 @@ class Rectangle extends Shape {
         $('.shapePerimeter').text('');
     };
     draw() {
-        $('.draw').css('width', this.width);
-        $('.draw').css('height', this.height);
-        $('.draw').css('background-color', 'green');
+        $('.addDraw').css('width', this.width);
+        $('.addDraw').css('height', this.height);
+        $('.addDraw').css('background-color', 'green');
+        let randY = Math.floor((Math.random() * 600) + 1);
+        let randX = Math.floor((Math.random() * 600) + 1);
+        $('.addDraw').css('transform', `translate(${randX}px, ${randY}px)`);
     };
 };
 
@@ -73,7 +76,7 @@ class Square extends Shape {
 $('[id="RectangleBtn"]').click(function () {
     let width = $('[id="RectangleWidth"]').val();
     let height = $('[id="RectangleHeight"]').val();
-    let rect = new Rectangle();
+    let rect = new Rectangle(width, height);
     rect.describe();
     rect.draw();
 });
