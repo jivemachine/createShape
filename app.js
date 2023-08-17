@@ -80,3 +80,20 @@ class Circle extends Shape {
         $('.shapePerimeter').text(`Perimeter: ${this.perimeter}`);
     }
 }
+
+// circle btn
+$('[id="CircleBtn"]').click(function () {
+    let radius = $('[id="CircleRadius"]').val();
+    let circ = new Circle(radius);
+    circ.draw();
+
+    // click shape to describe
+    $(document).on('click', '.circleDiv', function () {
+        circ.describe();
+    })
+
+    // dbl click shape to delete shape div
+    $(document).on('dblclick', '.circleDiv', function() {
+        $('.circleDiv').remove();
+    })
+});
