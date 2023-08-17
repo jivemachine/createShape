@@ -60,7 +60,7 @@ $('[id="SquareBtn"]').click(function () {
 class Circle extends Shape {
     constructor(radius, cl, id, height, width) {
         super(cl, id, height, width);
-        this.radius = radius;
+        this.radius = radius + 'px';
     }
     draw() {
         this.createDiv('circleDiv', 'thisCircle')
@@ -106,13 +106,13 @@ class Rectangle extends Shape {
         this.width = width;
     }
     draw() {
-        this.createDiv('rectangleDiv', 'thisRectangle')
-        $('.squareDiv').css('width', `${this.width}`);
-        $('.squareDiv').css('height', `${this.height}`);
-        $('.squareDiv').css('background-color', 'green');
+        this.createDiv('rectangleDiv', 'thisRectangle');
+        $('.rectangleDiv').css('width', `${this.width}`);
+        $('.rectangleDiv').css('height', `${this.height}`);
+        $('.rectangleDiv').css('background-color', 'green');
         let randY = Math.floor((Math.random() * 200) + 1);
         let randX = Math.floor((Math.random() * 200) + 1);
-        $('.squareDiv').css('transform', `translate(${randX}px, ${randY}px)`);
+        $('.rectangleDiv').css('transform', `translate(${randX}px, ${randY}px)`);
     }
     describe() {
         $('.shapeName').text('Rectangle');
