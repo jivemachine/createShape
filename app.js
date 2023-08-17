@@ -1,91 +1,77 @@
+// Shape class
 class Shape {
-    constructor() {
-
-    };
-    describe() {
-
-    }
-};
-
-class Circle extends Shape {
-    constructor(params) {
-
-    };
-    describe() {
-
-    };
-    draw() {
-        
-    };
-};
-
-class Triangle extends Shape {
-    constructor(height) {
-        super();
+    constructor(cl, id, height = 100 + 'px', width = 100 + "px") {
         this.height = height;
-
-    };
-    describe() {
-        $('.shapeName').text('Triangle');
-        $('.shapeWidth').text('');
-        $('.shapeHeight').text(`Height: ${this.height}`);
-        $('.shapeRadius').text('');
-        $('.shapePerimeter').text('');
-    }
-    draw() {
-
-    };
-};
-
-class Rectangle extends Shape {
-    constructor(width, height) {
-        super();
         this.width = width;
-        this.height = height;
-    };
+        this.cl = cl;
+        this.id = id;
+    }
+    createDiv(cl, id) {
+        // create Div
+        jQuery('<div>', {
+            class: `${cl}`,
+            id: `${id}`,
+        }).appendTo('.addDraw');
+    }
+}
+
+// Square class
+class Square extends Shape {
+    constructor(sideLength, cl, id, height, width) {
+        super(cl, id, height, width);
+        this.sideLength = sideLength + 'px';
+    }
+    draw() {
+        this.createDiv('squareDiv', 'thisSquare')
+        $('.squareDiv').css('width', `${this.sideLength}`);
+        $('.squareDiv').css('height', `${this.sideLength}`);
+        $('.squareDiv').css('background-color', 'red');
+        let randY = Math.floor((Math.random() * 200) + 1);
+        let randX = Math.floor((Math.random() * 200) + 1);
+        $('.squareDiv').css('transform', `translate(${randX}px, ${randY}px)`);
+    }
     describe() {
-        $('.shapeName').text('Rectangle');
+        $('.shapeName').text('Square');
+        $('.shapeWidth').text(`Width: ${this.sideLength}`);
+        $('.shapeHeight').text(`Height: ${this.sideLength}`);
+        $('.shapeRadius').text(`Radius: ${this.radius}`);
+        $('.shapePerimeter').text(`Perimeter: ${this.perimeter}`);
+    }
+}
+
+// square btn
+$('[id="SquareBtn"]').click(function () {
+    let length = $('[id="SquareLength"]').val();
+    let sq = new Square(length);
+    sq.draw();
+
+    // click shape to describe
+    $(document).on('click', '.squareDiv', function () {
+        sq.describe();
+    })
+});
+
+// Circle class
+class Circle extends Shape {
+    constructor(radius, cl, id, height, width) {
+        super(cl, id, height, width);
+        this.radius = radius;
+    }
+    draw() {
+        this.createDiv('circleDiv', 'thisCircle')
+        $('.circleDiv').css('width', `${this.width}`);
+        $('.circleDiv').css('height', `${this.height}`);
+        $('.circleDiv').css('border-radius', `${this.radius}`);
+        $('.circleDiv').css('background-color', 'purple');
+        let randY = Math.floor((Math.random() * 200) + 1);
+        let randX = Math.floor((Math.random() * 200) + 1);
+        $('.circleDiv').css('transform', `translate(${randX}px, ${randY}px)`);
+    }
+    describe() {
+        $('.shapeName').text('Circle');
         $('.shapeWidth').text(`Width: ${this.width}`);
         $('.shapeHeight').text(`Height: ${this.height}`);
-        $('.shapeRadius').text('');
-        $('.shapePerimeter').text('');
-    };
-    draw() {
-        $('.addDraw').css('width', this.width);
-        $('.addDraw').css('height', this.height);
-        $('.addDraw').css('background-color', 'green');
-        let randY = Math.floor((Math.random() * 600) + 1);
-        let randX = Math.floor((Math.random() * 600) + 1);
-        $('.addDraw').css('transform', `translate(${randX}px, ${randY}px)`);
-    };
-};
-
-class Square extends Shape {
-    constructor(params) {
-
-    };
-    describe() {
-
-    };
-    draw() {
-
-    };
-};
-
-// Rectangle 
-$('[id="RectangleBtn"]').click(function () {
-    let width = $('[id="RectangleWidth"]').val();
-    let height = $('[id="RectangleHeight"]').val();
-    let rect = new Rectangle(width, height);
-    rect.describe();
-    rect.draw();
-});
-
-$('[id="IsocelesBtn"]').click(function() {
-    let height = $('[id="IsocelesHeight"]').val();
-    console.log(height);
-    let tri = new Triangle(height);
-    console.log(tri);
-    tri.describe();
-    tri.draw();
-});
+        $('.shapeRadius').text(`Radius: ${this.radius}`);
+        $('.shapePerimeter').text(`Perimeter: ${this.perimeter}`);
+    }
+}
