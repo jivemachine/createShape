@@ -48,6 +48,7 @@
     height: 600px;
     width: 600px;
     z-index: -1;
+    overflow: auto;
 }
 
 .shapeInfo {
@@ -55,11 +56,3 @@
     background-color: burlywood;
     margin-bottom: 5%;
 };
-
-#circleID {
-    z-index: 1;
-}
-
-#rectangleID {
-    z-index: 1;
-}
