@@ -26,8 +26,8 @@ class Square extends Shape {
         $('.squareDiv').css('width', `${this.sideLength}`);
         $('.squareDiv').css('height', `${this.sideLength}`);
         $('.squareDiv').css('background-color', 'red');
-        let randY = Math.floor((Math.random() * 200) + 1);
-        let randX = Math.floor((Math.random() * 200) + 1);
+        let randY = Math.floor((Math.random() * 400) + 1);
+        let randX = Math.floor((Math.random() * 400) + 1);
         $('.squareDiv').css('transform', `translate(${randX}px, ${randY}px)`);
     }
     describe() {
@@ -68,8 +68,8 @@ class Circle extends Shape {
         $('.circleDiv').css('height', `${this.height}`);
         $('.circleDiv').css('border-radius', `${this.radius}`);
         $('.circleDiv').css('background-color', 'purple');
-        let randY = Math.floor((Math.random() * 200) + 1);
-        let randX = Math.floor((Math.random() * 200) + 1);
+        let randY = Math.floor((Math.random() * 400) + 1);
+        let randX = Math.floor((Math.random() * 400) + 1);
         $('.circleDiv').css('transform', `translate(${randX}px, ${randY}px)`);
     }
     describe() {
@@ -110,8 +110,8 @@ class Rectangle extends Shape {
         $('.rectangleDiv').css('width', `${this.width}`);
         $('.rectangleDiv').css('height', `${this.height}`);
         $('.rectangleDiv').css('background-color', 'green');
-        let randY = Math.floor((Math.random() * 200) + 1);
-        let randX = Math.floor((Math.random() * 200) + 1);
+        let randY = Math.floor((Math.random() * 400) + 1);
+        let randX = Math.floor((Math.random() * 400) + 1);
         $('.rectangleDiv').css('transform', `translate(${randX}px, ${randY}px)`);
     }
     describe() {
@@ -154,8 +154,8 @@ class Triangle extends Shape {
         $('.triangleDiv').css('height', `${this.height}`);
         $('.triangleDiv').css('border-bottom', `${this.height} solid green`);
         $('.triangleDiv').css('border-right', `${this.height} solid transparent`);
-        let randY = Math.floor((Math.random() * 200) + 1);
-        let randX = Math.floor((Math.random() * 200) + 1);
+        let randY = Math.floor((Math.random() * 400) + 1);
+        let randX = Math.floor((Math.random() * 400) + 1);
         $('.triangleDiv').css('transform', `translate(${randX}px, ${randY}px)`);
     }
     describe() {
