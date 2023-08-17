@@ -49,6 +49,11 @@ $('[id="SquareBtn"]').click(function () {
     $(document).on('click', '.squareDiv', function () {
         sq.describe();
     })
+
+    // dbl click shape to delete shape div
+    $(document).on('dblclick', '.squareDiv', function() {
+        $('.squareDiv').remove();
+    })
 });
 
 // Circle class
