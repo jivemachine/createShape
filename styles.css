@@ -44,8 +44,22 @@
     margin-bottom: 5%;
 }
 
+.addDraw {
+    height: 600px;
+    width: 600px;
+    z-index: -1;
+}
+
 .shapeInfo {
     margin-left: 3em;
     background-color: burlywood;
     margin-bottom: 5%;
 };
+
+#circleID {
+    z-index: 1;
+}
+
+#rectangleID {
+    z-index: 1;
+}
